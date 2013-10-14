@@ -1,0 +1,398 @@
+/*
+Theme Name: 	Fotolio Theme
+Theme URI: 		http://vienhoang.com
+Description: 	Fotolio is a clean WordPress theme for photographers. It is great if you want to blog about your photos.
+Version: 		1.0
+Author: 		Vien Hoang
+Author URI: 	http://vienhoang.com
+Tags: 			clean, basic, light green, 960 gs
+Email:			contact@vienhoang.com
+*/
+
+/*
+Colors:
+
+background, selection
+light green, #d6ff9f
+
+logo
+dark black, #353535
+light grey,#959595
+
+body text
+darker black, #181818
+
+links, menu
+green, #8dbd0c
+light grey, #959595
+
+span
+orange, #ff6345
+*/
+
+/* Importing 960 gs */
+@import "css/960/960.css";
+
+/* Importing Google font, Noto Sans */
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic);
+
+/* Importing Flexslider 2 css */
+@import "css/flexslider.css";
+
+/* RESETS & BASIC PAGE SETUP */
+*{ margin: 0; padding: 0; }
+html{ overflow-y: scroll; font-size: 62.5%; }
+body{ background-color: #d6ff9f; color: #181818; font-family: Verdana, Arial, Helvetica, Georgia, serif; }
+article, aside, figure, footer, header, hgroup, menu, nav, section , button, div{ display: block; }
+
+table{color: #181818; width: 100%;}
+th, td{padding: 2px;}
+th {text-align: left;}
+
+ul{ list-style: none; }
+
+form label{display: block;}
+form input, textarea{
+border: 1px solid #8dbd0c;
+font-style: italic;
+font-size: 14px;
+letter-spacing: 0.1em;
+padding: 0 10px;
+}
+
+form input[type="text"]{
+height: 30px;
+width: 50%;
+}
+
+textarea{
+padding-top: 4px;
+width: 100%;
+}
+
+form input[type="submit"]{
+background-color: #8dbd0c;
+color: white;
+cursor: pointer;
+font-style: normal;
+height: 30px;
+}
+
+::selection{ background: #d6ff9f; }
+::-moz-selection{ background: #d6ff9f; }
+
+/* USEFUL CLASSES */
+.float_left{ float: left; }
+.float_right{ float: right; }
+.center{ text-align: center; }
+.clear{ clear: both; }
+.outline{ border: 1px solid black;}
+
+/* LINKS */
+a{
+color: #8dbd0c;
+text-decoration: none;
+}
+
+/* links with transitions */
+header form input.searchbutton, #pagination li a, footer ul li a{
+-moz-transition: all 0.3s ease-out;
+-ms-transition: all 0.3s ease-out;
+-o-transition: all 0.3s ease-out;
+transition: all 0.3s ease-out;
+-webkit-transition: all 0.3s ease-out;
+opacity: 0.5;
+}
+
+header form input.searchbutton:hover, #pagination li a:hover, #pagination li a.current, footer ul li a:hover{ opacity: 1;}
+
+/* STRUCTURE */
+#wrapper{
+background-color: white;
+margin: 20px auto;
+}
+
+/* HEADER */
+#searchbar{ margin-bottom: 22px; }
+
+header form{ float: right; }
+
+header form input.searchfield, header form input.searchbutton{
+border: 1px solid #8dbd0c;
+float: left;
+height: 30px;
+}
+
+header form input.searchfield{
+padding: 0 10px;
+margin-right: 10px;
+width: 158px;
+}
+
+header form input.searchbutton{
+background: url(images/sprites.png) no-repeat 0 0;
+border: none;
+cursor: pointer;
+float: left;
+/*Image replacement hack, instead of setting text-indent to -9999px*/
+padding: 0;
+overflow: hidden;
+text-indent: 100%;
+white-space: nowrap;
+/*Image replacement hack, instead of setting text-indent to -9999px*/
+width: 30px;
+}
+
+header{ margin-top: 20px; }
+
+header h1, header h6{ font-family: 'Noto Sans', sans-serif; }
+
+header h1{
+color: #353535;
+font-size: 30px;
+font-size: 3rem;
+}
+
+header h6{
+color: #8f8f8f;
+font-size: 18px;
+font-size: 1.8rem;
+font-style: italic;
+font-weight: bold;
+}
+
+nav{
+font-family: Tahoma, sans-serif;
+font-size: 16px;
+font-size: 1.6rem;
+margin: 20px 0 35px 0;
+}
+
+nav ul{ float: right; }
+
+nav ul li{
+display: block;
+float: left;
+/* 100 tracking in PS is 0.01em, 100/1000 */
+letter-spacing: 0.1em;
+position: relative;
+z-index: 10;
+}
+
+nav ul a{
+color: #959595;
+display: table-cell;
+height: 30px;
+padding: 5px 10px;
+vertical-align: middle;
+width: 120px; 
+}
+
+nav ul a:hover, nav ul a:active{
+background-color: #8dbd0c;
+color: white;
+}
+
+nav li > ul{
+background-color: white;
+display: none;
+position: absolute;
+left: 0;
+top: 100%;
+border: 1px solid #8dbd0c;
+width: 138px; 
+}
+
+nav li:hover  > ul{ display: block; }
+
+nav li > ul li > ul{
+left: 100%;
+top: 0;
+}
+
+nav li > ul li > ul li {
+width: 138px; 
+}
+
+/*First a hover tag*/
+nav li:hover > a{
+background: #8dbd0c;
+color: white;
+}
+
+/* CONTENT */
+#gallery{ position: relative; }
+
+#gallery h2, #gallery span{
+color: white;
+font-family: 'Noto Sans', Sans-Serif;
+font-weight: normal;
+padding: 8px 14px;
+text-align: right;
+/* Almost same position except top for span*/
+position: absolute;
+top: 420px;
+right: 15px;
+}
+
+#gallery h2{
+background-color: #363636;
+font-size: 26px;
+font-size: 2.6rem;
+}
+
+#gallery span{
+background-color: #ff6345;
+font-size: 18px;
+font-size: 1.8rem;
+top: 480px;
+}
+
+.hr{
+background: url(images/dot.gif) repeat-x;
+height: 4px;
+margin: 30px 0;
+}
+
+/* SINGLE PAGE */
+article h2, article h4, article h5{ font-weight: normal;}
+
+article h2{
+font-size: 24px;
+font-size: 2.4rem;
+}
+
+article h4{ margin: 16px 0; }
+
+article h4 span{
+background: #ff6345;
+color: white;
+font-size: 12px;
+font-size: 1.2rem;
+padding: 6px 14px;
+}
+
+article p{
+font-size: 14px;
+font-size: 1.4rem;
+letter-spacing: 0.01em;
+line-height: 22px;
+padding: 16px 0 0;
+}
+
+article  #postinfo{ margin: 10px 0; }
+
+article  #postinfo p{
+color: #959595;
+font-size: 12px;
+font-size: 1.2rem;
+font-weight: bold;
+padding: 0;
+}
+
+/* SEARCH RESULTS */
+article  h5{
+font-size: 16px;
+font-size: 1.6rem;
+}
+
+/* Results for tag.php, category.php, archive.php */
+.results p{
+padding: 16px 0;
+}
+
+/* SIDEBAR */
+aside h3{
+color: #959595;
+font-size: 14px;
+font-size: 1.4rem;
+line-height: 22px;
+}
+
+aside ul{
+font-size: 12px;
+font-size: 1.2rem;
+line-height: 22px;
+letter-spacing: 0.01em;
+padding: 10px 0 24px;
+}
+
+.widget table{
+margin-bottom: 24px;
+}
+/* POSTS */
+#posts h3{
+color: #181818;
+font-size: 14px;
+font-size: 1.4rem;
+letter-spacing: 0.1em;
+margin: 14px 0 26px;
+}
+
+#posts p{
+font-size: 12px;
+font-size: 1.2rem;
+letter-spacing: 0.1em;
+line-height: 20px;
+}
+
+/* Every third post, starting 1 */
+#posts section:nth-child(3n+1){ margin-left: 0;}
+/* Every third post, starting 2 */
+#posts section:nth-child(3n+2){ padding-left: 60px; }
+/* Every third post, starting 3 */
+#posts section:nth-child(3n+3){
+margin-right: 0;
+padding-left: 60px;
+}
+
+/* PAGINATION */
+#pagination{ margin-top: 35px; }
+
+#pagination ul li{
+display: block;
+float: left;
+font-size: 14px;
+font-size: 1.4rem;
+margin-right: 10px;
+}
+
+#pagination li a{
+border: 1px solid #8dbd0c;
+padding: 4px 12px;
+}
+
+#pagination li a:hover, #pagination li a.current{
+background-color: #8dbd0c;
+color: white;
+}
+
+#pagination .page_pagination li:nth-child(1){ float: left; }
+#pagination .page_pagination li:nth-child(2){ float: right; }
+
+#comments {margin-top: 10px;}
+#comments ul li article{
+padding: 10px 0 20px;
+}
+
+/* FOOTER */
+footer{ padding-bottom: 40px; }
+
+footer ul li a{
+background: url(images/sprites.png) no-repeat -33px 0;
+display: block;
+float: right;
+height: 16px;
+margin: 0 15px 0 0;
+width: 16px;
+/*Image replacement hack, instead of setting text-indent to -9999px*/
+overflow: hidden;
+text-indent: 100%;
+white-space: nowrap;
+/*Image replacement hack, instead of setting text-indent to -9999px*/
+}
+
+footer ul li a.twitter{ background-position: -33px 0; }
+footer ul li a.facebook{ background-position: -52px 0;}
+footer ul li a.rss{ background-position: -71px 0; }
+footer ul li a.skype{ background-position: -90px 0; }
